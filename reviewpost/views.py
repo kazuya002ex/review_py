@@ -35,3 +35,7 @@ def listview(request):
 def detailview(request, pk):
   object = ReviewModel.objects.get(pk=pk)
   return render(request, 'detail.html', { 'object' : object })
+
+def loginview(request):
+  logout(request)
+  return redirect('login')
