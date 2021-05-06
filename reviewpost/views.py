@@ -1,4 +1,8 @@
 from django.shortcuts import render
 
 def signupview(request):
-  return render(request, 'signup.html', { 'somedata' : 100 })
+  if request.method == 'POST':
+    print('POST method')
+  else:
+    print('GET method probably...')
+  return render(request, 'signup.html', {})
